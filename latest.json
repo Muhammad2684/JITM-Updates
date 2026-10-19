@@ -1,1 +1,12 @@
-{"version":"1.3.0","tag":"v1.3.0"}
+{
+  "version": "1.3.0",
+  "tag": "v1.3.0",
+  "released_at": "2026-10-19T11:48:33Z",
+  "notes": "### In-app auto-updater\n- Sidebar Update badge + Data Management \u2192 Software Update: check, download (SHA-256 verified), install & restart \u2014 a full safety snapshot is taken before every install\n- Releases publish to the public JITM-Updates feed; future updates arrive in-app\n\n### Shell & navigation\n- Back / Forward / Reload buttons in the tab row (per-tab stack; never touches browser history)\n- Ctrl+Tab / Ctrl+Shift+Tab cycle tabs from anywhere, including inside frames\n- POS tab collapses the sidebar behind an inline hamburger button\n- Tab bar scrollbar hidden while wheel/horizontal scrolling is kept\n\n### Fixes\n- Browser Back while signed in can never show the login page; frame Back/forward bounce out of /login\n- In-frame re-login lands on Home instead of nesting the shell\n- Sidebar sub-menus no longer clip at 6+ items\n- 0-byte xlsx export fixed",
+  "asset": {
+    "name": "JITM-POS-Setup-1.3.0.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.3.0/JITM-POS-Setup-1.3.0.exe",
+    "size": 24818672,
+    "sha256": "1bba03de9e29f21aa8370d0f8501934b4b42af61557245c8266ef066c4ccb132"
+  }
+}
