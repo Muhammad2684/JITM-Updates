@@ -1,12 +1,12 @@
 {
   "version": "1.3.7",
   "tag": "v1.3.7",
-  "released_at": "2026-11-05T13:31:33Z",
-  "notes": "## Supplier & customer opening balance fix\n\n- Opening balance is now fixed history: receipts/payments no longer reduce it. The full amount posts to the customer credit / supplier balance delta, so the ledger closing balance and the list balance always agree.\n- Editing or deleting a receipt/payment reverses the full amount from the delta column.\n- One-time repair migration (`party_balance_fix_v1`) restores opening balances consumed by older builds and recovers overpayments whose remainder was previously dropped. Runs automatically once on first launch.\n- Customer Edit modal now prefills Opening Balance from `opening_balance` only (not the credit delta), so saving cannot overwrite it.\n- Advances/overpayments now show as a negative party balance instead of disappearing.",
+  "released_at": "2026-11-05T13:36:02Z",
+  "notes": "## What's included in v1.3.7\n\n### Supplier & customer opening balance fix\n- Opening balance is now fixed history: receipts/payments no longer reduce it. The full amount posts to the customer credit / supplier balance delta, so the ledger closing balance and the list balance always agree.\n- Editing or deleting a receipt/payment reverses the full amount from the delta column.\n- One-time repair migration (`party_balance_fix_v1`) restores opening balances consumed by older builds and recovers overpayments whose remainder was previously dropped. Runs automatically once on first launch.\n- Customer Edit modal now prefills Opening Balance from `opening_balance` only (not the credit delta), so saving cannot overwrite it.\n- Advances/overpayments now show as a negative party balance instead of disappearing.\n\n### Shared numeric input grouping engine (`static/calc.js`)\n- Every money and quantity input now uses `type=\"text\" inputmode=\"decimal\"` with `data-num=\"money\"` / `data-num=\"qty\"`.\n- Calculator-style live thousands grouping while typing (e.g. `600000` shows as `600,000`), 2-decimal normalization for money, quantity precision preserved.\n- Paste sanitizing (`Rs 1,234.56` \u2192 `1234.56`) and arithmetic expressions on Enter/blur (`500+50`, `=500+50`).\n- `min`/`max` clamping on blur; dynamically rendered rows (invoice lines, BOM, POS cart) attach automatically via `MutationObserver`.\n- Reading `el.value` still returns the comma-free raw value, so existing handlers and JSON payloads are unchanged.\n- Shared `toNumber()` / `parseNum()` helpers replace fragile single-comma stripping when reading displayed text (e.g. Summary totals).\n- Applied across inventory, POS, sales/purchase invoices and returns, BOM, production orders, recipe profiles, raw materials, stock adjustments/transfers, payroll, expenses, payments, receipts, accounts, customers and suppliers.",
   "asset": {
     "name": "JITM-POS-Setup-1.3.7.exe",
     "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.3.7/JITM-POS-Setup-1.3.7.exe",
-    "size": 24851925,
-    "sha256": "027fe3a9a1a2b22147a0934e687db97b4f3fbc9fc5cec35dcb60360bb94e3d0d"
+    "size": 24855572,
+    "sha256": "a2771e26644b49d13cf29127933b57877beac1d908a6e3e67da7131eba4d5748"
   }
 }
