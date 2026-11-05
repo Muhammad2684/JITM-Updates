@@ -1,12 +1,12 @@
 {
-  "version": "1.3.7",
-  "tag": "v1.3.7",
-  "released_at": "2026-11-05T13:36:02Z",
-  "notes": "## What's included in v1.3.7\n\n### Supplier & customer opening balance fix\n- Opening balance is now fixed history: receipts/payments no longer reduce it. The full amount posts to the customer credit / supplier balance delta, so the ledger closing balance and the list balance always agree.\n- Editing or deleting a receipt/payment reverses the full amount from the delta column.\n- One-time repair migration (`party_balance_fix_v1`) restores opening balances consumed by older builds and recovers overpayments whose remainder was previously dropped. Runs automatically once on first launch.\n- Customer Edit modal now prefills Opening Balance from `opening_balance` only (not the credit delta), so saving cannot overwrite it.\n- Advances/overpayments now show as a negative party balance instead of disappearing.\n\n### Shared numeric input grouping engine (`static/calc.js`)\n- Every money and quantity input now uses `type=\"text\" inputmode=\"decimal\"` with `data-num=\"money\"` / `data-num=\"qty\"`.\n- Calculator-style live thousands grouping while typing (e.g. `600000` shows as `600,000`), 2-decimal normalization for money, quantity precision preserved.\n- Paste sanitizing (`Rs 1,234.56` \u2192 `1234.56`) and arithmetic expressions on Enter/blur (`500+50`, `=500+50`).\n- `min`/`max` clamping on blur; dynamically rendered rows (invoice lines, BOM, POS cart) attach automatically via `MutationObserver`.\n- Reading `el.value` still returns the comma-free raw value, so existing handlers and JSON payloads are unchanged.\n- Shared `toNumber()` / `parseNum()` helpers replace fragile single-comma stripping when reading displayed text (e.g. Summary totals).\n- Applied across inventory, POS, sales/purchase invoices and returns, BOM, production orders, recipe profiles, raw materials, stock adjustments/transfers, payroll, expenses, payments, receipts, accounts, customers and suppliers.",
+  "version": "1.3.8",
+  "tag": "v1.3.8",
+  "released_at": "2026-11-05T14:34:36Z",
+  "notes": "## What's included in v1.3.8\n\n### Income Statement keeps its date range\n- The **From / To** date filter on Summary \u2192 Income Statement is now saved and restored, so the period you last looked at is still selected after closing and reopening the app.\n- The range is stored in the app database (`settings.summary_is_from` / `summary_is_to`) and shared by the whole installation.\n- **Clear** is remembered too: clicking Clear saves an empty range, so the next launch opens unfiltered (all-time).\n- The statement loads already filtered on page open \u2014 no extra click needed.\n\n### Production Orders list shows Notes\n- The last column of the Production Orders list is now **Notes** instead of repeating the total cost on completed rows.\n- Long notes stay on one line with an ellipsis, and the full text appears on hover.\n- The Edit / Complete / Cancel buttons for pending orders remain in that column, directly under the note.\n- The Notes column is sortable like every other column, and order notes were already searchable \u2014 that still works.\n",
   "asset": {
-    "name": "JITM-POS-Setup-1.3.7.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.3.7/JITM-POS-Setup-1.3.7.exe",
-    "size": 24855572,
-    "sha256": "a2771e26644b49d13cf29127933b57877beac1d908a6e3e67da7131eba4d5748"
+    "name": "JITM-POS-Setup-1.3.8.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.3.8/JITM-POS-Setup-1.3.8.exe",
+    "size": 24855386,
+    "sha256": "b1f06403f02dd29d0bc3570ae489a5702f41f36cbb49c41dde2ad9957fb3acbb"
   }
 }
