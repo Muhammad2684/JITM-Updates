@@ -1,12 +1,12 @@
 {
-  "version": "1.4.0",
-  "tag": "v1.4.0",
-  "released_at": "2026-11-09T09:33:04Z",
-  "notes": "## JITM POS v1.4.0\n\n### New\n- **Shortcuts** \u2014 quick-launch tiles on the Home page that open a form with your preset values already filled in (Receipts, Payments, Create Sales Invoice, Create Purchase Invoice). Personal by default; owners/managers can publish business-wide shared shortcuts. Icons via the SVG icon pack \u2014 no emojis. Clicking a shortcut always opens a new tab.\n\n### Changed\n- **JITM icon pack** \u2014 the interface no longer uses emoji glyphs anywhere. All icons are inline SVGs (feather-style): Quick Access tiles, pin buttons, sort/pagination chevrons, sidebar & inventory expanders, print buttons and the POS menu chrome.\n\nNo database migration required \u2014 the new `shortcuts` table is created automatically on first boot. Backup/restore covers it.",
+  "version": "1.4.1",
+  "tag": "v1.4.1",
+  "released_at": "2026-11-09T15:49:13Z",
+  "notes": "## JITM POS v1.4.1\n\n### New\n- **Shortcuts: pre-add invoice line items** \u2014 shortcuts for Create Sales Invoice, Create Purchase Invoice, Create Sale Return, Create Purchase Return and New Production Order can now preset line items (product + qty). The modal gets a spreadsheet-style ITEM | QTY table (a faithful clone of the invoice line editors: name/SKU autocomplete, arrow/Tab/Enter keyboard navigation, auto-adding row, sku-tag), fully keyboard-driven, with a Products / Raw Materials scope toggle on the purchase invoice target.\n- **Five more shortcut targets** \u2014 Create Sale Return, Create Purchase Return, Add Expense (with create-new-category fallback), Inter-Account Transfers (from/to must differ), New Production Order. Sale/Purchase Returns and Production Orders support pre-added lines as well.\n\n### Fixed / improved\n- Line-items dropdown: wider ITEM column, smaller QTY, no longer clipped by the modal, re-anchors to the input on scroll instead of disappearing, fully arrow-key navigable (Tab picks + moves to QTY, Enter picks + drops to next row).\n\nNo database migration required. Backup/restore covers the `shortcuts` table as before.",
   "asset": {
-    "name": "JITM-POS-Setup-1.4.0.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.0/JITM-POS-Setup-1.4.0.exe",
-    "size": 24915873,
-    "sha256": "3ddf8fdf783bf21da543e4c8c0fbda509c361b91578d171cee9744f5cad4b565"
+    "name": "JITM-POS-Setup-1.4.1.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.1/JITM-POS-Setup-1.4.1.exe",
+    "size": 24923136,
+    "sha256": "90202cdd106d0b47309e53c692bbe74c61d301454373347e1de68f5383ffe781"
   }
 }
