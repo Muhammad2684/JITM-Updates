@@ -1,12 +1,12 @@
 {
-  "version": "1.3.8",
-  "tag": "v1.3.8",
-  "released_at": "2026-11-05T14:34:36Z",
-  "notes": "## What's included in v1.3.8\n\n### Income Statement keeps its date range\n- The **From / To** date filter on Summary \u2192 Income Statement is now saved and restored, so the period you last looked at is still selected after closing and reopening the app.\n- The range is stored in the app database (`settings.summary_is_from` / `summary_is_to`) and shared by the whole installation.\n- **Clear** is remembered too: clicking Clear saves an empty range, so the next launch opens unfiltered (all-time).\n- The statement loads already filtered on page open \u2014 no extra click needed.\n\n### Production Orders list shows Notes\n- The last column of the Production Orders list is now **Notes** instead of repeating the total cost on completed rows.\n- Long notes stay on one line with an ellipsis, and the full text appears on hover.\n- The Edit / Complete / Cancel buttons for pending orders remain in that column, directly under the note.\n- The Notes column is sortable like every other column, and order notes were already searchable \u2014 that still works.\n",
+  "version": "1.4.0",
+  "tag": "v1.4.0",
+  "released_at": "2026-11-09T09:33:04Z",
+  "notes": "## JITM POS v1.4.0\n\n### New\n- **Shortcuts** \u2014 quick-launch tiles on the Home page that open a form with your preset values already filled in (Receipts, Payments, Create Sales Invoice, Create Purchase Invoice). Personal by default; owners/managers can publish business-wide shared shortcuts. Icons via the SVG icon pack \u2014 no emojis. Clicking a shortcut always opens a new tab.\n\n### Changed\n- **JITM icon pack** \u2014 the interface no longer uses emoji glyphs anywhere. All icons are inline SVGs (feather-style): Quick Access tiles, pin buttons, sort/pagination chevrons, sidebar & inventory expanders, print buttons and the POS menu chrome.\n\nNo database migration required \u2014 the new `shortcuts` table is created automatically on first boot. Backup/restore covers it.",
   "asset": {
-    "name": "JITM-POS-Setup-1.3.8.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.3.8/JITM-POS-Setup-1.3.8.exe",
-    "size": 24855386,
-    "sha256": "b1f06403f02dd29d0bc3570ae489a5702f41f36cbb49c41dde2ad9957fb3acbb"
+    "name": "JITM-POS-Setup-1.4.0.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.0/JITM-POS-Setup-1.4.0.exe",
+    "size": 24915873,
+    "sha256": "3ddf8fdf783bf21da543e4c8c0fbda509c361b91578d171cee9744f5cad4b565"
   }
 }
