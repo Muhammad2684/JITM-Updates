@@ -1,12 +1,12 @@
 {
-  "version": "1.4.4",
-  "tag": "v1.4.4",
-  "released_at": "2026-11-11T17:03:09Z",
-  "notes": "Fixes the update download failing with SSL CERTIFICATE_VERIFY_FAILED.\n\n- Every update HTTPS call now loads a bundled CA bundle (certifi) **in addition to** the Windows certificate store, so hosts whose root is missing from the machine's store (or a stripped-down Windows install) verify correctly.\n- Network errors are reported in plain language (certificate, timeout, DNS, connection) instead of raw Python text.\n- A failed download now shows the release asset URL as selectable text so the update can be installed manually when the app cannot download it.\n- New 'Test connection' button in Data Management > Software Update diagnostics: probes the update feed and the release-asset host from inside the app and reports per-host result, CA bundle in use, and OpenSSL version.\n\nIf you are on 1.4.2 or 1.4.3 and the download fails, install this release manually once (direct installer link below). After that the in-app updater works.",
+  "version": "1.4.5",
+  "tag": "v1.4.5",
+  "released_at": "2026-11-11T17:20:20Z",
+  "notes": "Final updater hardening - install this once by hand if 1.4.4 cannot download.\n\n- Windows install hand-off now uses two complete Setup command lines instead of a quoted /DIR variable, so install folders with spaces (`C:\\Program Files\\...`) are passed correctly.\n- The updater's cmd hand-off line is properly terminated; previously the last argument (the install folder) could lose its closing quote.\n- New relaunch fallback: if the old exe is gone and the /DIR target does not exist, the app is reopened from Inno's per-user default folder.\n- If the detached installer helper dies immediately (blocked script, policy, bad path), the app now stays open and reports it with the helper's log instead of closing and leaving you with nothing.\n- Unchanged from 1.4.4: bundled CA trust, plain-language network errors, manual download URL, Test connection.",
   "asset": {
-    "name": "JITM-POS-Setup-1.4.4.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.4/JITM-POS-Setup-1.4.4.exe",
-    "size": 25069090,
-    "sha256": "cb8c0afe65889d33b2f7ca75743df6b3d5f8b77e6fa5fc7e05492bef2b749e78"
+    "name": "JITM-POS-Setup-1.4.5.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.5/JITM-POS-Setup-1.4.5.exe",
+    "size": 25068886,
+    "sha256": "ed111065f80da3cd2aedc1664b0536c1022505d1206321bd3e81318415f65be3"
   }
 }
