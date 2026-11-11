@@ -1,12 +1,12 @@
 {
-  "version": "1.4.2",
-  "tag": "v1.4.2",
-  "released_at": "2026-11-11T16:45:57Z",
-  "notes": "Updater reliability fix.\n\n- Check Now always performs a live feed check (status?refresh=1); a normal page load shows the cache and refreshes it in the background, with a 'Feed last checked' line and a warning when the server could not be reached. A previous release can no longer be shown as the latest one.\n- Online checks now use a 12s timeout with one retry and a cache-buster (raw.githubusercontent serves max-age=300).\n- Download re-reads the feed first, validates asset size and SHA-256, and progress is matched to the current download.\n- Install & Restart now hands off to a detached runner that waits for the app to exit, installs with /LOG and /CLOSEAPPLICATIONS /FORCECLOSEAPPLICATIONS /NOCANCEL, and relaunches the app whether the install succeeded or failed.\n- Installer: removed the AppMutex that silently cancelled updates and the InitializeSetup taskkill that raced the updater's shutdown; added SetupLogging, CloseApplications, and a legacy silent relaunch entry so clients on older builds also come back up.\n- New diagnostics panel in Data Management > Software Update: install folder (+ writability), last setup exit code, installer log tail.",
+  "version": "1.4.3",
+  "tag": "v1.4.3",
+  "released_at": "2026-11-11T16:50:34Z",
+  "notes": "Test build for verifying the in-app updater end to end.\n\nNo functional changes since 1.4.2 \u2014 only the version number differs, so you can confirm the update really landed (sidebar footer should read 'JITM v1.4.3').\n\nWhat to expect when installing this from 1.4.2:\n- Check Now fetches the live feed (no 6-hour cache).\n- Download verifies size + SHA-256 before it is offered for install.\n- Install & Restart takes a safety backup, closes the app, installs silently with a log, and reopens the app on v1.4.3.\n- Data Management > Software Update now shows a diagnostics block: install folder (+ writability), last setup exit code, and the installer log tail.",
   "asset": {
-    "name": "JITM-POS-Setup-1.4.2.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.2/JITM-POS-Setup-1.4.2.exe",
-    "size": 24929351,
-    "sha256": "37489dcd815fc795727a0530b58620fb187019e99d0015713c110a66c7c5f744"
+    "name": "JITM-POS-Setup-1.4.3.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.3/JITM-POS-Setup-1.4.3.exe",
+    "size": 24929608,
+    "sha256": "0d91a6451071a55733be5397662b3342b50ea6afce32eb8425cdeea52a04b9f7"
   }
 }
