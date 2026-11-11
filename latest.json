@@ -1,12 +1,12 @@
 {
-  "version": "1.4.1",
-  "tag": "v1.4.1",
-  "released_at": "2026-11-09T15:49:13Z",
-  "notes": "## JITM POS v1.4.1\n\n### New\n- **Shortcuts: pre-add invoice line items** \u2014 shortcuts for Create Sales Invoice, Create Purchase Invoice, Create Sale Return, Create Purchase Return and New Production Order can now preset line items (product + qty). The modal gets a spreadsheet-style ITEM | QTY table (a faithful clone of the invoice line editors: name/SKU autocomplete, arrow/Tab/Enter keyboard navigation, auto-adding row, sku-tag), fully keyboard-driven, with a Products / Raw Materials scope toggle on the purchase invoice target.\n- **Five more shortcut targets** \u2014 Create Sale Return, Create Purchase Return, Add Expense (with create-new-category fallback), Inter-Account Transfers (from/to must differ), New Production Order. Sale/Purchase Returns and Production Orders support pre-added lines as well.\n\n### Fixed / improved\n- Line-items dropdown: wider ITEM column, smaller QTY, no longer clipped by the modal, re-anchors to the input on scroll instead of disappearing, fully arrow-key navigable (Tab picks + moves to QTY, Enter picks + drops to next row).\n\nNo database migration required. Backup/restore covers the `shortcuts` table as before.",
+  "version": "1.4.2",
+  "tag": "v1.4.2",
+  "released_at": "2026-11-11T16:45:57Z",
+  "notes": "Updater reliability fix.\n\n- Check Now always performs a live feed check (status?refresh=1); a normal page load shows the cache and refreshes it in the background, with a 'Feed last checked' line and a warning when the server could not be reached. A previous release can no longer be shown as the latest one.\n- Online checks now use a 12s timeout with one retry and a cache-buster (raw.githubusercontent serves max-age=300).\n- Download re-reads the feed first, validates asset size and SHA-256, and progress is matched to the current download.\n- Install & Restart now hands off to a detached runner that waits for the app to exit, installs with /LOG and /CLOSEAPPLICATIONS /FORCECLOSEAPPLICATIONS /NOCANCEL, and relaunches the app whether the install succeeded or failed.\n- Installer: removed the AppMutex that silently cancelled updates and the InitializeSetup taskkill that raced the updater's shutdown; added SetupLogging, CloseApplications, and a legacy silent relaunch entry so clients on older builds also come back up.\n- New diagnostics panel in Data Management > Software Update: install folder (+ writability), last setup exit code, installer log tail.",
   "asset": {
-    "name": "JITM-POS-Setup-1.4.1.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.1/JITM-POS-Setup-1.4.1.exe",
-    "size": 24923136,
-    "sha256": "90202cdd106d0b47309e53c692bbe74c61d301454373347e1de68f5383ffe781"
+    "name": "JITM-POS-Setup-1.4.2.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.2/JITM-POS-Setup-1.4.2.exe",
+    "size": 24929351,
+    "sha256": "37489dcd815fc795727a0530b58620fb187019e99d0015713c110a66c7c5f744"
   }
 }
