@@ -1,12 +1,12 @@
 {
-  "version": "1.4.3",
-  "tag": "v1.4.3",
-  "released_at": "2026-11-11T16:50:34Z",
-  "notes": "Test build for verifying the in-app updater end to end.\n\nNo functional changes since 1.4.2 \u2014 only the version number differs, so you can confirm the update really landed (sidebar footer should read 'JITM v1.4.3').\n\nWhat to expect when installing this from 1.4.2:\n- Check Now fetches the live feed (no 6-hour cache).\n- Download verifies size + SHA-256 before it is offered for install.\n- Install & Restart takes a safety backup, closes the app, installs silently with a log, and reopens the app on v1.4.3.\n- Data Management > Software Update now shows a diagnostics block: install folder (+ writability), last setup exit code, and the installer log tail.",
+  "version": "1.4.4",
+  "tag": "v1.4.4",
+  "released_at": "2026-11-11T17:03:09Z",
+  "notes": "Fixes the update download failing with SSL CERTIFICATE_VERIFY_FAILED.\n\n- Every update HTTPS call now loads a bundled CA bundle (certifi) **in addition to** the Windows certificate store, so hosts whose root is missing from the machine's store (or a stripped-down Windows install) verify correctly.\n- Network errors are reported in plain language (certificate, timeout, DNS, connection) instead of raw Python text.\n- A failed download now shows the release asset URL as selectable text so the update can be installed manually when the app cannot download it.\n- New 'Test connection' button in Data Management > Software Update diagnostics: probes the update feed and the release-asset host from inside the app and reports per-host result, CA bundle in use, and OpenSSL version.\n\nIf you are on 1.4.2 or 1.4.3 and the download fails, install this release manually once (direct installer link below). After that the in-app updater works.",
   "asset": {
-    "name": "JITM-POS-Setup-1.4.3.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.3/JITM-POS-Setup-1.4.3.exe",
-    "size": 24929608,
-    "sha256": "0d91a6451071a55733be5397662b3342b50ea6afce32eb8425cdeea52a04b9f7"
+    "name": "JITM-POS-Setup-1.4.4.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.4/JITM-POS-Setup-1.4.4.exe",
+    "size": 25069090,
+    "sha256": "cb8c0afe65889d33b2f7ca75743df6b3d5f8b77e6fa5fc7e05492bef2b749e78"
   }
 }
