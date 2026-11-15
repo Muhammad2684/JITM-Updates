@@ -1,12 +1,12 @@
 {
-  "version": "1.4.5",
-  "tag": "v1.4.5",
-  "released_at": "2026-11-11T17:20:20Z",
-  "notes": "Final updater hardening - install this once by hand if 1.4.4 cannot download.\n\n- Windows install hand-off now uses two complete Setup command lines instead of a quoted /DIR variable, so install folders with spaces (`C:\\Program Files\\...`) are passed correctly.\n- The updater's cmd hand-off line is properly terminated; previously the last argument (the install folder) could lose its closing quote.\n- New relaunch fallback: if the old exe is gone and the /DIR target does not exist, the app is reopened from Inno's per-user default folder.\n- If the detached installer helper dies immediately (blocked script, policy, bad path), the app now stays open and reports it with the helper's log instead of closing and leaving you with nothing.\n- Unchanged from 1.4.4: bundled CA trust, plain-language network errors, manual download URL, Test connection.",
+  "version": "1.4.6",
+  "tag": "v1.4.6",
+  "released_at": "2026-11-15T08:39:22Z",
+  "notes": "Updater test target - no functional changes.\n\nThis build exists only so a machine running 1.4.5 has a newer version to download. It proves the end-to-end in-app update: Check Now -> Download -> Install & Restart (app closes, installs silently, reopens by itself).\n\nIf you are on 1.4.5: just use the in-app updater. If you are on 1.4.4 or older, install 1.4.5 manually once first (that build contains the TLS fix).",
   "asset": {
-    "name": "JITM-POS-Setup-1.4.5.exe",
-    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.5/JITM-POS-Setup-1.4.5.exe",
-    "size": 25068886,
-    "sha256": "ed111065f80da3cd2aedc1664b0536c1022505d1206321bd3e81318415f65be3"
+    "name": "JITM-POS-Setup-1.4.6.exe",
+    "url": "https://github.com/Muhammad2684/JITM-Updates/releases/download/v1.4.6/JITM-POS-Setup-1.4.6.exe",
+    "size": 25068452,
+    "sha256": "4925c07aa3e79fa36adf32f8422e6e1ab0f37109d292cb300e066db8d126562b"
   }
 }
